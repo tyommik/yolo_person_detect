@@ -1,28 +1,25 @@
-## YOLOv3行人检测
+## Person/Pedestrian Detector with YOLOv3
 
-本脚本集合主要是针对YOLOv3的两个主流版本（[AlexeyAB/darknet](https://github.com/AlexeyAB/darknet) & [pjreddie/darknet](https://github.com/pjreddie/darknet)），本身不包含YOLOv3的代码和配置文件，但是根据指引可以完成一个效果较好的行人检测系统。
+This script collection is for YOLOv3 ([AlexeyAB/darknet](https://github.com/AlexeyAB/darknet) & [pjreddie/darknet](https://github.com/pjreddie/darknet) ). It doesn't contain the code and configuration file of YOLOv3, but according to this guidelines you can get a better pedestrian detection system.
 
-目前主要是以下几个功能：
+This repo:
+1. Provides code to help you extract the person class image from the datasets such as VOC2007/VOC2012/COCO and convert the label. Here, when extracting the VOC dataset, all the thumbnail=1 pictures are retained by default, and the effect will be better. For details, please refer to [Issue #1200] (https://github.com/AlexeyAB/darknet/issues/1200);
+2. Provide code to help calculate the correct rate of mAP;
+3. It is recommended to use the tee command to save the training log. You can use the script provided in this article to visualize the training process.
 
-0. 将YOLOv3常用的网址和资料归纳整理了一下；
-1. 提供代码，帮助从VOC2007/VOC2012/COCO等数据集中提取出person类图片，并转换标注。这里提取VOC数据集时默认保留了全部difficult=1的图片，效果会更好，具体请参见[Issue #1200](https://github.com/AlexeyAB/darknet/issues/1200)；
-2. 提供代码，帮助计算mAP正确率；
-3. 建议使用tee指令保存训练日志，可使用本文提供的脚本实现训练过程可视化；
+## Results
 
-
-## 效果对比
-
-YOLO_mine（基于AB版本，只检测行人）
+YOLO_mine
 
 ![kite-7-final](https://github.com/pascal1129/yolo_person_detect/blob/master/images/kite-7-final.jpg)
 
-YOLO_pj（pj版本，所有类别全检测）
+YOLO_pj（default model)
 
 ![kite-pj](https://github.com/pascal1129/yolo_person_detect/blob/master/images/kite-pj.jpg)
 
 
 
-## 文件结构
+## File structure
 
 ```
 yolo_person_detect
